@@ -2,7 +2,7 @@
 
 /**
  * main - This prints hello puts
- * Return : This returns 0
+ * return : Always 0 (Successful)
  */
 
 int main(void)
