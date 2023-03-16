@@ -1,8 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - This prints hello puts
- * return : Always 0 (Successful)
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
  */
 
 int main(void)
