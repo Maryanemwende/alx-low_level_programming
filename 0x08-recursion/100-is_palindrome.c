@@ -8,15 +8,16 @@
  */
 int _strlen(char *s)
 {
-	int length = 0;
 	int i = 0;
 
-	if (s[i] != '\0')
+	if (s[i] == '\0')
 	{
-		length++;
-		i++;
+		return (0);
 	}
-	return (length);
+	else
+	{
+		return (1 + _strlen(s + 1));
+	}
 }
 /**
  * _palindrome_checker - checks if string is a palindrome
