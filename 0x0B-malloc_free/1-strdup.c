@@ -13,7 +13,7 @@
  */
 char *_strdup(char *str)
 {
-	int len;
+	int len = 0;
 	int indx;
 	char *str2;
 
@@ -23,10 +23,13 @@ char *_strdup(char *str)
 	}
 
 	/*calculate length of input string*/
-	for (len = 0; str[len] != '\0'; len++)
+	for (indx = 0; str[indx] != '\0'; indx++)
+	{
+		len++;
+	}
 
 	/*allocate memory for the new string*/
-	str2 = malloc(len + 1);
+	str2 = malloc(sizeof(char) * (len + 1));
 
 	if (str2 == NULL)
 	{
@@ -38,6 +41,8 @@ char *_strdup(char *str)
 	{
 		str2[indx] = str[indx];
 	}
+
+	str2[len] = '\0';/*null terminate the new string*/
 
 	return (str2);
 }
