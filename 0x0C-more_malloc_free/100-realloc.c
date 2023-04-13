@@ -20,23 +20,21 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 	if (new_size == old_size)
 		return (ptr);
+	if (ptr == NULL)
+	{
+		return (malloc(new_size));
+	}
 	if (new_size == 0 && ptr != NULL)
 	{
 		free(ptr);
 		return (NULL);
-	}
-	if (ptr == NULL)
-	{
-		allocmem = malloc(new_size);
-		if (allocmem == NULL)
-			return (NULL);
-		return  (allocmem);
 	}
 
 	allocmem = malloc(new_size);
 
 	if (allocmem == NULL)
 		return (NULL);
+
 	p = ptr;
 
 	allocmem = malloc(sizeof(*p) * new_size);
@@ -46,9 +44,10 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		free(ptr);
 		return (NULL);
 	}
+
 	dest = allocmem;
 
-	for (i = 0; i < new_size && i < old_size; i++)
+	for (i = 0; i < old_size && i < new_size; i++)
 		dest[i] = *p++;
 	free(ptr);
 	return (allocmem);
