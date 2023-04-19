@@ -4,7 +4,7 @@
  * op_add - adds two integers
  * @a: integer input
  * @b: integer input
- * 
+ *
  * Return: sum of a and b
  */
 int op_add(int a, int b)
@@ -37,7 +37,7 @@ int op_mul(int a, int b)
 }
 
 /**
- * op_div - finds division of two integers 
+ * op_div - finds division of two integers
  *
  * @a: int input
  * @b: int input
