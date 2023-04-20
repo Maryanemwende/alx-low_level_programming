@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 
 	bytes = atoi(argv[1]);
 
-	if(bytes < 0)
+	if (bytes < 0)
 	{
 		printf("Error\n");
 		return (2);
@@ -32,6 +32,8 @@ int main(int argc, char *argv[])
 	for (elem = 0; elem < bytes; elem++)
 	{
 		printf("%.2x", *(ptr + elem));
+
+		printf(" ");
 	}
 
 	printf("\n");
