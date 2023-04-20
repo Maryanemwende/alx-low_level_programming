@@ -11,8 +11,8 @@
  */
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
-	int x;
-	int y;
+	int num1;
+	int num2;
 	char *op_func;
 
 	if (argc != 4)
@@ -21,9 +21,9 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		exit(98);
 	}
 
-	x = atoi(argv[1]);
+	num1 = atoi(argv[1]);
 	op_func = argv[2];
-	y = atoi(argv[3]);
+	num2 = atoi(argv[3]);
 
 	if (get_op_func(op_func) == NULL || op_func[1] != '\0')
 	{
@@ -31,18 +31,18 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		exit(99);
 	}
 
-	if (*op_func == '/' && y == 0)
+	if (*op_func == '/' && num2 == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
-	if (*op_func == '%' && y == 0)
+	if (*op_func == '%' && num2 == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
 
-	printf("%d\n", get_op_func(op_func)(x, y));
+	printf("%d\n", get_op_func(op_func)(num1, num2));
 
 	return (0);
 }
